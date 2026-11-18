@@ -1,26 +1,213 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #f4f0e8;
+  --paper-bright: #fffdf8;
+  --ink: #172238;
+  --muted: #6f756f;
+  --line: rgba(23, 34, 56, 0.13);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --font-sans: var(--font-dm-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--paper);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(231, 111, 81, 0.16), transparent 28rem),
+    radial-gradient(circle at 88% 94%, rgba(143, 185, 154, 0.2), transparent 24rem),
+    var(--paper);
+  color: var(--ink);
+  font-family: var(--font-dm-sans);
+}
+
+a {
+  color: inherit;
+}
+
+.page-shell {
+  width: min(100%, 660px);
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: max(42px, env(safe-area-inset-top))
+    max(20px, env(safe-area-inset-right))
+    max(28px, env(safe-area-inset-bottom))
+    max(20px, env(safe-area-inset-left));
+}
+
+.profile {
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--font-bricolage);
+  font-size: clamp(2.8rem, 12vw, 4.8rem);
+  font-weight: 400;
+  letter-spacing: -0.075em;
+  line-height: 0.95;
+}
+
+.intro {
+  max-width: 360px;
+  margin: 18px auto 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.link-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 38px;
+}
+
+.link-card {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  gap: 15px;
+  padding: 11px 16px 11px 11px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--paper-bright) 88%, transparent);
+  box-shadow: 0 6px 0 rgba(23, 34, 56, 0.04);
+  text-decoration: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.link-card:hover {
+  border-color: rgba(23, 34, 56, 0.35);
+  box-shadow: 0 9px 0 rgba(23, 34, 56, 0.08);
+  transform: translateY(-2px);
+}
+
+.link-card:focus-visible {
+  outline: 3px solid #e76f51;
+  outline-offset: 4px;
+}
+
+.link-mark {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  place-items: center;
+  border-radius: 14px;
+  color: white;
+}
+
+.link-mark-coral { background: #e76f51; }
+.link-mark-ink { background: #172238; }
+.link-mark-mint { background: #6f9d82; }
+.link-mark-blue { background: #4f6fae; }
+.link-mark-green { background: #3c9a70; }
+.link-mark-gold { background: #d39a3f; }
+
+.link-copy {
+  display: grid;
+  flex: 1 1 auto;
+  min-width: 0;
+  gap: 4px;
+}
+
+.link-title {
+  overflow: hidden;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.link-subtitle {
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.01em;
+}
+
+.link-arrow {
+  flex: 0 0 auto;
+  margin-left: auto;
+  color: #8d938c;
+  font-size: 1.2rem;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.link-card:hover .link-arrow {
+  color: var(--ink);
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 480px) {
+  .link-card {
+    min-height: 70px;
+  }
+
+  .link-mark {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+  }
+}
+
+@media (max-width: 360px) {
+  .page-shell {
+    padding-inline: max(12px, env(safe-area-inset-left))
+      max(12px, env(safe-area-inset-right));
+  }
+
+  h1 {
+    font-size: clamp(2.35rem, 14vw, 3.1rem);
+  }
+
+  .intro {
+    font-size: 0.9rem;
+  }
+
+  .link-card {
+    gap: 10px;
+    padding-right: 12px;
+  }
+
+  .link-mark {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+    border-radius: 12px;
+  }
+
+  .link-title {
+    font-size: 0.9rem;
+  }
+
+  .link-subtitle {
+    font-size: 0.7rem;
+  }
+
+  .link-arrow {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link-card,
+  .link-arrow {
+    transition: none;
+  }
 }
