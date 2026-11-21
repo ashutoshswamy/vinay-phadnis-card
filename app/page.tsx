@@ -40,7 +40,7 @@ const links = [
   {
     title: "Solvian",
     subtitle: "Visit the website",
-    href: "https://solvian.in/",
+    href: "https://solvianconsultancy.com/",
     icon: FiArrowUpRight,
     tone: "gold",
   },
