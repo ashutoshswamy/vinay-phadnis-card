@@ -24,20 +24,6 @@ const links = [
     tone: "mint",
   },
   {
-    title: "Facebook",
-    subtitle: "Connect on Facebook",
-    href: "https://www.facebook.com/share/1ExJGg1tn8/?mibextid=wwXIfr",
-    icon: FaFacebookF,
-    tone: "blue",
-  },
-  {
-    title: "WhatsApp Channel",
-    subtitle: "Follow the channel",
-    href: "https://whatsapp.com/channel/0029VbDJoVkKgsNsXwH71i3a",
-    icon: FaWhatsapp,
-    tone: "green",
-  },
-  {
     title: "Solvian",
     subtitle: "Visit the website",
     href: "https://solvianconsultancy.com/",
