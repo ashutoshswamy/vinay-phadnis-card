@@ -3,20 +3,6 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 const links = [
   {
-    title: "Vinay Phadnis",
-    subtitle: "Personal Instagram",
-    href: "https://www.instagram.com/vinay_phadnis?cplk=ejR6Y3ZmbW14dTFy",
-    icon: FaInstagram,
-    tone: "coral",
-  },
-  {
-    title: "Solvian Group",
-    subtitle: "Instagram",
-    href: "https://www.instagram.com/solvian.group?dlrf=MWY0eDl3OWNwNHQ1eQ==",
-    icon: FaInstagram,
-    tone: "ink",
-  },
-  {
     title: "IdeaMint India",
     subtitle: "Instagram",
     href: "https://www.instagram.com/ideamint_india?vrfl=NzBqOGxnOGljcWNu",
@@ -29,6 +15,20 @@ const links = [
     href: "https://solvianconsultancy.com/",
     icon: FiArrowUpRight,
     tone: "gold",
+  },
+  {
+    title: "Solvian Group",
+    subtitle: "Instagram",
+    href: "https://www.instagram.com/solvian.group?dlrf=MWY0eDl3OWNwNHQ1eQ==",
+    icon: FaInstagram,
+    tone: "ink",
+  },
+  {
+    title: "Vinay Phadnis",
+    subtitle: "Personal Instagram",
+    href: "https://www.instagram.com/vinay_phadnis?cplk=ejR6Y3ZmbW14dTFy",
+    icon: FaInstagram,
+    tone: "coral",
   },
 ] as const;
 
